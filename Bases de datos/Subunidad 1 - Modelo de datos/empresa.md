@@ -1,3 +1,0 @@
-Empresa
-
-Cliente
