@@ -31,6 +31,6 @@ for dia in range(2,31,2):
 	
 print("Total de dias pares contados:",contador)
 
-#este ejercicio nos permite comprender como funciona la estruc
+#este ejercicio nos permite comprender como funcionan los bucles, las listas, las iteraciones y el operador modulo. la importancia de estas estructuras radican en que nos permiten automatizar actividades repetitivas en menos lineas de código.Este tipo de estructuras pueden aplicarse en videojuegos, por ejemplo, para controlar ciclos como el conteo de vidas, el avance de niveles o el reinicio del juego cuando el personaje pierde toda su energía.
 	
 
