@@ -4,11 +4,7 @@ Autor: Gustavo Delnardo - 1º DAM
 
 Los videojuegos y la música forman parte del entretenimiento diario de las personas, demostraremos como la programación puede integrar estos dos elementos.
 
-El objetivo de esto es demostrar como podemos contar los dias pares del mes dentro de un rango o contar del 1 al 100 combinando con una lista de canciones que reproducirán cada dia.
-
-Practicaremos la utilizacion de variables, bucles for, iteración con rangos, operadores y listas.
-
-De esta forma, el estudiante comprende cómo la programación puede mezclar la lógica con el entretenimiento, reforzando la comprensión de los bucles en Python.
+Nuestro objetivo es demostrar como podemos contar los dias pares del mes dentro de un rango o contar del 1 al 100 combinando con una lista de canciones que se reproducirán por cada dia que pasa. Practicaremos la utilizacion de variables, bucles for, iteración con rangos, operadores y listas. Asi comprendemos cómo la programación puede mezclar la lógica con el entretenimiento, reforzando la comprensión de los bucles en Python.
 '''
 
 #declaramos variables:
@@ -27,10 +23,8 @@ canciones = ["CDC - Rubia sol, morena luna",
 for dia in range(2,31,2):
 	cancion = canciones[contador % len (canciones)] #calcula la cancion para ese dia y utilizamos el operador módulo para rotar entre los elementos de la lista de canciones.
 	print("Hoy es el dia",dia,"del mes. Reproduciendo:",cancion)
-	contador += 1
+	contador += 1 #El contador aumentará en uno por cada dia que pasa.
 	
 print("Total de dias pares contados:",contador)
 
-#este ejercicio nos permite comprender como funciona la estruc
-	
-
+#Con éste ejercicio comprendemos como funcionan los bucles, las listas, las iteraciones y el operador modulo. la importancia de éstas estructuras radican en que nos permiten automatizar actividades repetitivas en menos lineas de código. Éste tipo de estructuras pueden aplicarse en videojuegos, por ejemplo, para controlar ciclos como el conteo de vidas, el avance de niveles o el reinicio del juego cuando el personaje pierde toda su energía.
