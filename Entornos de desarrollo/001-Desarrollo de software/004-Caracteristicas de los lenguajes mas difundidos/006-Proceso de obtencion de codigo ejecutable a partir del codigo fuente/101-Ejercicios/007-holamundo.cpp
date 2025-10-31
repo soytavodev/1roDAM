@@ -13,3 +13,5 @@ int main(){
 }
 
 //compilar: g++ 007-hola mundo.cpp -o acpp.out
+//ejecutar: ./acpp.out (win: a.exe)
+
