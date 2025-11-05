@@ -20,8 +20,9 @@ while True:
   if opcion == 1:
     titulo = input("Introduce el titulo de la nueva pieza: ")
     descripcion = input("Introduce la descripcion de la nueva pieza: ")
-    fecha = input("Introduce la fecha de la nueva pieza: ")
-    imagen = input("Introduce el nombre de la imagen de la nueva pieza: ")
+    imagen = input("Introduce la imagen: ")
+    url = input("Introduce el nombre de la imagen de la nueva pieza: ")
+    id_categoria = input("Introduce la categoria: ")
     cursor.execute("INSERT INTO piezas VALUES (NULL,'"+titulo+"','"+descripcion+"','"+fecha+"',1,'"+imagen+"');")
     conexion.commit()
   elif opcion == 2:
