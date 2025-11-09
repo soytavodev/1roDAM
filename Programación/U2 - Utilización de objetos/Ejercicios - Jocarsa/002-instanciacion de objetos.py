@@ -36,7 +36,7 @@ print("Cantidad de canciones por género:")
 for genero, cantidad in conteo_genero.items():
     print(genero + ":", cantidad)
 
-# Conclusión: Aprendí a usar listas y diccionarios para guardar info de canciones.
-# Esto ayuda a hacer cuentas automáticamente y también podría usarlo
-# para cosas de videojuegos, como llevar el registro de puntos o personajes.
+#aprendí a usar listas y diccionarios para guardar info de canciones.
+#esto ayuda a hacer cuentas automáticamente y también podría usarlo
+#para cosas de videojuegos, como llevar el registro de puntos o personajes.
 
