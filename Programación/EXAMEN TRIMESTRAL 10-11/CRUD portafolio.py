@@ -1,3 +1,11 @@
+'''
+Programa: Gestor CRUD v1.0
+
+Gustavo Delnardo
+
+Descripción: Aplicación de consola en Python que permite gestionar una base de datos MySQL mediante operaciones CRUD (Crear, Leer, Actualizar, Eliminar). Incluye un menú interactivo con bucle infinito y captura de opciones del usuario.
+'''
+
 import mysql.connector
 
 # ---------------------------------------------------------
@@ -9,8 +17,6 @@ try:
         user="gustavo",          #cambia si usas otro usuario
         password="Hakaishin2.",          #agrega tu contraseña
         database="portafolioexamen", #usa la misma base de datos
-        ssl_disabled=True,
-        auth_plugin='mysql_native_password'
     )
     cursor = conexion.cursor()
 except mysql.connector.Error as err:
@@ -20,7 +26,7 @@ except mysql.connector.Error as err:
 # ---------------------------------------------------------
 # FUNCIÓN: INSERTAR PIEZA
 # ---------------------------------------------------------
-def insertar_piezaportafolio():
+def insertar_piezas():
     print("\n=== INSERTAR PIEZA ===")
     titulo = input("Introduce el titulo de la pieza: ")
     descripcion = input("Introduce la descripcion: ")
@@ -35,7 +41,7 @@ def insertar_piezaportafolio():
 # ---------------------------------------------------------
 # FUNCIÓN: LISTAR PIEZAS
 # ---------------------------------------------------------
-def listar_piezasportafolio():
+def listar_piezas():
     print("\n=== LISTADO DE PIEZAS ===")
     cursor.execute("SELECT * FROM piezasportafolio;")
     filas = cursor.fetchall()
@@ -49,15 +55,15 @@ def listar_piezasportafolio():
 # ---------------------------------------------------------
 # FUNCIÓN: ACTUALIZAR PIEZAS
 # ---------------------------------------------------------
-def actualizar_piezasportafolio():
+def actualizar_piezas():
     print("\n=== ACTUALIZAR PIEZA ===")
-    id_piezaportafolio = input("Introduce el ID de la pieza a actualizar: ")
+    id_piezas = input("Introduce el ID de la pieza a actualizar: ")
     nuevo_nombre = input("Nuevo nombre de la pieza: ")
     nueva_descripcion = input("Nueva descripción de la pieza: ")
     nueva_fecha = input("Nueva fecha de la pieza: ")
 
-    sql = "UPDATE piezasportafolio SET titulo=%s, descripcion=%s, fecha=%s WHERE id=%s"
-    valores = (nuevo_nombre, nueva_descripcion, nueva_fecha, id_piezasportafolio)
+    sql = "UPDATE piezasportafolio SET titulo=%s, descripcion=%s, fecha=%s WHERE id_categoria=%s"
+    valores = (nuevo_nombre, nueva_descripcion, nueva_fecha, id_piezas)
     cursor.execute(sql, valores)
     conexion.commit()
     print("Pieza actualizada correctamente.")
@@ -65,14 +71,14 @@ def actualizar_piezasportafolio():
 # ---------------------------------------------------------
 # FUNCIÓN: ELIMINAR PIEZA
 # ---------------------------------------------------------
-def eliminar_piezaportafolio():
+def eliminar_piezas():
     print("\n=== ELIMINAR PIEZA ===")
-    id_piezaportafolio = input("Introduce el ID de la pieza a eliminar: ")
+    id_piezasportafolio = input("Introduce el ID de la pieza a eliminar: ")
     confirmacion = input("¿Seguro que deseas eliminarla? (S/N): ").lower()
 
     if confirmacion == "s":
-        sql = "DELETE FROM piezasportafolio WHERE id=%s"
-        cursor.execute(sql, (id_pieza,))
+        sql = "DELETE FROM piezasportafolio WHERE id_categoria=%s"
+        cursor.execute(sql, (id_piezasportafolio,))
         conexion.commit()
         print("Pieza eliminada correctamente.")
     else:
@@ -97,13 +103,13 @@ Bienvenido al Gestor de Piezas
     opcion = input("Elige una opción (1-5): ")
 
     if opcion == "1":
-        insertar_pieza()
+        insertar_piezas()
     elif opcion == "2":
         listar_piezas()
     elif opcion == "3":
-        actualizar_pieza()
+        actualizar_piezas()
     elif opcion == "4":
-        eliminar_pieza()
+        eliminar_piezas()
     elif opcion == "5":
         print("Gracias por usar el Gestor de Piezas. ¡Hasta pronto!")
         break
