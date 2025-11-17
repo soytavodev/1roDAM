@@ -1,4 +1,4 @@
-sudo mysql -u root -p
+--sudo mysql -u root -p
 
 USE CLIENTES;
 
